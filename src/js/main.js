@@ -1,49 +1,70 @@
-const navbar = document.getElementById('navbar');
-navbar.innerHTML = `<nav class="bem-navbar">
-            <a href="#" class="bem-navbar__brand"></a>
-            <input type="checkbox" id="nav-toggle" class="bem-navbar__checkbox">
-            <label for="nav-toggle" class="bem-navbar__toggle">☰</label>
-            <ul class="bem-navbar__menu">
-                <li class="bem-navbar__item">
-                    <a href="#inicio" class="bem-navbar__link bem-navbar__link--active">Início</a>
-                </li>
-                <li class="bem-navbar__item">
-                    <a href="#sobre" class="bem-navbar__link">Sobre</a>
-                </li>
-                <li class="bem-navbar__item">
-                    <a href="#servicos" class="bem-navbar__link">Serviços</a>
-                </li>
-                <li class="bem-navbar__item">
-                    <a href="#contato" class="bem-navbar__link">Contato</a>
-                </li>
-            </ul>
-        </nav>`
+import navbar from "./componentes/navbar/navbar.js";
+import home from "./componentes/paginas/home.js";
+import servicos from "./componentes/paginas/servicos.js";
+import contato from "./componentes/paginas/contato.js";
+import sobre from "./componentes/paginas/sobre.js";
+
 
 const app = document.getElementById('app');
 // app.textContet = '<h1>Olá Mundo</h1>';
 
 
 
-
+let rota = window.location.hash || '#inicio';
+render();
 window.addEventListener("hashchange" , ()=>{
-const rota = window.location.hash;
-switch(rota){
-    case '#inicio':
-        app.innerHTML = inicio;
-    break;
-    case '#sobre':
-        app.innerHTML = sobre;
-    break;
-    case '#servicos':
-        app.innerHTML = servicos;
-    break
-    case '#contato':
-        app.innerHTML = contato;
-    break;
-    default:
-        app.innerHTML = '<h1>Página não Encontrada</h1>';
-}
+rota = window.location.hash;
+render();
+
 })
 
+function render(){
+    switch(rota){
+        case '#inicio':
+            app.innerHTML = home;
+        break;
+        case '#sobre':
+            app.innerHTML = sobre;
+        break;
+        case '#servicos':
+            app.innerHTML = servicos;
+        break
+        case '#contato':
+            app.innerHTML = contato;
+        break;
+        default:
+            app.innerHTML = '<h1>Página não Encontrada</h1>';
+    }
+}
 
-app.innerHTML = `<h1>Bem vindo</h1>`;
+
+
+// console.log("Contagem Regressiva")
+// for(let i=100; i<=100; i-=5){
+//     console.log(i);
+// }
+
+
+// console.log("Contagem Progressiva")
+// for(let i=0; i<=100; i+=5){
+//     if(i % 2 === 0){
+//         console.log(i + " É par!");
+//     }
+    
+// }
+    
+
+// let temperatura = 20
+// let ligado = true;
+// while (ligado){
+//     console.log("A temperatura atual é: " + temepratura);
+//     temperatura +- 0.05;
+//     if(temperatura >=30 && temperatura <33){
+//         console.log("Enviar email de alerta: Temperatura alta!");
+//     }else if(temperatura >33){
+//         ligado = false;
+//         console.log("Desligando o sistema para evitar danos. ")
+//         //break;
+//     }
+
+// }
