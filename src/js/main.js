@@ -23,17 +23,6 @@ const app = document.getElementById('app');
 // app.textContet = '<h1>Olá Mundo</h1>';
 
 
-const inicio = `<h1> Esta é a Página Inicial </h1> <p> Bem Vindo Ao Site</p>`
-
-
-const sobre = `<h1> Esta é a Página Sobre </h1> <p> Este Site é um exemplo de SPA usando Java Script puro</p>`
-
-
-const servicos = `<h1>Esta é a Página de serviços</h1> <p>Selecione o seu serviço</P>  `
-
-
-const contato = `<h1> Esta é a Página De Contato </h1> <p> Entre em contato conosco pelo Email:</p>`
-
 
 
 window.addEventListener("hashchange" , ()=>{
