@@ -108,7 +108,7 @@ body{
   overflow:hidden;
   transition:all .3s ease;
 }
-.bem-card:hover{ box-shadow:var(--bem-shadow-lg);transform:translateY(+70px) }
+.bem-card:hover{ box-shadow:var(--bem-shadow-lg);transform:translateY(-2px) }
 .bem-card--flat{ box-shadow:none;border:1px solid var(--bem-border) }
 .bem-card__header{ padding:var(--bem-spacing-lg);border-bottom:1px solid var(--bem-border) }
 .bem-card__title{ font-size:1.25rem;font-weight:600;margin:0;color:var(--bem-text) }
@@ -141,7 +141,7 @@ body{
 .bem-form__input:focus,
 .bem-form__textarea:focus,
 .bem-compare__range:focus-visible{
-  opacity:.01;
+  opacity:1;
   outline:3px solid var(--bem-primary);
   outline-offset:-3px;
 }
@@ -227,7 +227,7 @@ body{
   box-shadow:var(--bem-shadow-sm);
   border-bottom:1px solid var(--bem-border);
   transition:background .25s;
-  position:sticky; top:0; z-index:500;
+  position:sticky; top:0; z-index:100;
 }
 .bem-navbar--dark{ background-color:var(--bem-dark);color:#fff }
 .bem-navbar__brand{ font-size:1.5rem;font-weight:700;text-decoration:none;color:inherit }
