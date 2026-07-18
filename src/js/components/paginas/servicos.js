@@ -24,7 +24,7 @@ const detalhes = [
 
 //
 function servicos(){
-cardServico += `<div class="bem-grid-auto">`
+    cardServico += `<div class="bem-grid-auto">`
     for(let i=0; i < detalhes.length; i++){
         cardServico += `
                     <div class="bem-card">
@@ -38,7 +38,6 @@ cardServico += `<div class="bem-grid-auto">`
             `
         }
     cardServico += `</div>`
-    return
+    return cardServico
 }
-
 export default servicos;
