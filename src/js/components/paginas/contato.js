@@ -1,9 +1,9 @@
 // duas formas de exportar mais de uma função de um mesmo arquivo
 //
 async function contato(app) {
-const paginadecontato = `<section class= "bem-conteiner">
+const paginadecontato = `<section class="bem-container">
 <h1> Esta é página Contato </h1>
-    <form class="bem-form" id="formulario-de-contato">
+    <form class="bem-container" id="formulario-de-contato">
         <div class="bem-form__group">
             <label for="assunto" class="bem-form__label">Assunto</label>
             <input type="text" name="assunto" id="assunto" class="bem-form__input">
@@ -23,8 +23,8 @@ const paginadecontato = `<section class= "bem-conteiner">
     </section>
     `
 
-    app.innerHTML = paginadecontato;
-    await capturarFormulario()
+app.innerHTML = paginadecontato;
+await capturarFormulario()
 } 
 
 async function capturarFormulario(){
@@ -50,7 +50,7 @@ async function capturarFormulario(){
     })
 }
 
-export default{
+export default {
     url:'#contato',
     label:'Contato',
     pagina: contato

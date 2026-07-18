@@ -38,10 +38,10 @@ async function servicos(app){
             `
         }
     cardServico += `</div>`
-    app.innerHTML = cardServico;
+    app.innerHTML = cardServico
 }
 export default {
-    url:'#servicos',
-    label:'Serviços',
+    url: '#servicos',
+    label: 'Serviços',
     pagina: servicos
 };

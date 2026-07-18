@@ -19,17 +19,17 @@ async function capturacep(){
 }
 async function telaCadastro(app){
     const formulario = `
-    <form id="cadastroCliente" class="bem-conteiner">
-        <label for="cep" class="bem-form_label">CEP</label>
-        <input type="text" id="cep" class="bem-form_input">
-        <label for="logradouro" class="bem-form_label">logradouro</label>
-        <input type="text" id="logradouro"class="bem-form_input">
-        <label for="bairro" class="bem-form_label ">bairro</label>
-        <input type="text" id="bairro"class="bem-form_input">
-        <label for="localidade" class="bem-form_label">localidade</label>
-        <input type="text" id="localidade"class="bem-form_input">
-        <label for="estado" class="bem-form_label">estado</label>
-        <input type="text" id="estado" class="bem-form_input">
+    <form id="cadastroCliente" class="bem-container" >
+        <label for="cep" class="bem-form__label" >CEP</label>
+        <input type="text" id="cep" class="bem-form__input" >
+        <label for="logradouro" class="bem-form__label">logradouro</label>
+        <input type="text" id="logradouro" class="bem-form__input">
+        <label for="bairro" class="bem-form__label">bairro</label>
+        <input type="text" id="bairro" class="bem-form__input">
+        <label for="localidade" class="bem-form__label">localidade</label>
+        <input type="text" id="localidade" class="bem-form__input">
+        <label for="estado" class="bem-form__label">estado</label>
+        <input type="text" id="estado" class="bem-form__input">
     </form>
     `
     app.innerHTML = formulario;
@@ -37,9 +37,8 @@ async function telaCadastro(app){
 }
 
 
-export default
-{
-    url:'#cadastro',
-    label:'Cadastro',
+export default {
+    url: '#cadastro',
+    label: 'Cadastro',
     pagina: telaCadastro
-}
+};

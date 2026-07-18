@@ -3,7 +3,7 @@ import roteador from "./components/rotas/rotas.js";
 navbar(roteador);
 const app = document.getElementById('app');
 //console.log(roteador)
-const mapaDeRotas= {}
+const mapaDeRotas = {}
 //console.log(mapaDeRotas)
 for(const rota of roteador){
     mapaDeRotas[rota.url] = rota
@@ -12,6 +12,7 @@ for(const rota of roteador){
 // console.log(mapaDeRotas["#inicio"])
 // console.log(mapaDeRotas["#inicio"].pagina)
 // console.log(mapaDeRotas["#inicio"].pagina())
+//    && = e  || = ou
 let hash = window.location.hash || '#inicio';
 render();
 window.addEventListener("hashchange", ()=>{
@@ -24,11 +25,11 @@ const rota404 = { pagina: () => `<div> Página não encontrada 404 </div>`}
 async function render(){
     const rotaAtual = mapaDeRotas[hash] || rota404
     await rotaAtual.pagina(app)
-   
+    
 }
 // testes de assincronismo
 // console.log("A Primeira chamada")
-// setTimeout"=>{
+// setTimeout(()=>{
 //     console.log("A Segunda Execução ou não?")
 // })
 // console.log("A Terceira execução ou não?")
