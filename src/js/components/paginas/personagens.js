@@ -1,14 +1,12 @@
 import buscarServicos from "../services/api.js"
 let cardServico = ""
 let numero = 1
-async function criarPagina(app) {
+async function criarPagina(app){
     const nPagina = `?page=${numero}`;
-    const detalhes = await  buscarServicos("https://rickandmortyapi.com/api/character", nPagina);
+    const detalhes = await buscarServicos("https://rickandmortyapi.com/api/character/",nPagina);
     console.log(detalhes.results)
-    console.log(detalhes.results.length)
     cardServico += `
-    <div class="bem-conteiner">
-    <div>
+    <div class="bem-container">
         <button class="bem-btn bem-btn--primary" id="btn-esquerda">
             <span class="bem-btn__icon"> ◄ </span>
             <span class="bem-btn__text"> ◄ </span>
@@ -19,6 +17,7 @@ async function criarPagina(app) {
         </button>
     </div>
     <div class="bem-grid-auto">
+
     `
     for(let i=0; i < detalhes.results.length; i++){
         cardServico += `
@@ -34,32 +33,30 @@ async function criarPagina(app) {
         }
     cardServico += `</div>`
     app.innerHTML = cardServico
-    await capturarBotoes()
-        
+    await capturaBotoes()
 }
 
-async function capturarBotoes() {
-    const botao_esquerdo = document.getElementById("btn-esquerda");
-    const botao_direito = document.getElementById("btn-direita");
+async function capturaBotoes() {
+    const botao_esquerdo = document.getElementById("btn-esquerda")
+    const botao_direito = document.getElementById("btn-direita")
 
     botao_esquerdo.addEventListener("click", ()=>{
-        if(numero >1){
+        if(numero > 1){
             numero=numero-1
             console.log(numero)
         }
-    })
+    } )
 
     botao_direito.addEventListener("click", ()=>{
-        if(numero< 20){
+        if(numero < 20){
             numero=numero+1
             console.log(numero)
         }
-    })
+    } )
 }
-
 
 export default {
     url: "#rick",
     label: "Buscar API",
     pagina: criarPagina
-}
+};
