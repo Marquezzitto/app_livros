@@ -1,4 +1,4 @@
-import buscarServicos from "../services/api.js"
+import buscarServicos from "../services/apiCache.js"
 
 let numero = 1
 async function criarPagina(app){
@@ -37,21 +37,21 @@ async function criarPagina(app){
     await capturaBotoes(app, detalhes.results)
 }
 
-async function capturaBotoes(app, personagens){
+async function capturaBotoes(app, personagens) {
     const botao_esquerdo = document.getElementById("btn-esquerda")
     const botao_direito = document.getElementById("btn-direita")
 
     botao_esquerdo.addEventListener("click", ()=>{
         if(numero > 1){
             numero=numero-1
-           criarPagina(app)
+            criarPagina(app)
         }
     } )
 
     botao_direito.addEventListener("click", ()=>{
         if(numero < 20){
             numero=numero+1
-           criarPagina(app)
+            criarPagina(app)
         }
     } )
 }
