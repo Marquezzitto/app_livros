@@ -13,7 +13,8 @@ const roteador = [
     servicos,
     sobre,
     contato,
-    telaCadastro
+    telaCadastro,
+    criarPagina
 ]
 
 export default roteador;
