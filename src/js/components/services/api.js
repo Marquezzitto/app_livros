@@ -1,4 +1,4 @@
-async function buscarServicos(url, dados, forma=''){
+async function buscarServicos(url, dados="", forma=''){
     try {
         const formataURL = `${url}${dados}${forma}`
         const response = await fetch(formataURL);
